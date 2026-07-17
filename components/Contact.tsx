@@ -175,14 +175,25 @@ export default function Contact() {
 }
 
 function ContactForm({ inView: _inView }: { inView: boolean }) {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Simulate send — wire up your preferred form handler (Formspree, Resend, etc.)
-    setTimeout(() => setStatus("sent"), 1500);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setStatus("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   return (
@@ -242,8 +253,8 @@ function ContactForm({ inView: _inView }: { inView: boolean }) {
 
       <motion.button
         type="submit"
-        disabled={status !== "idle"}
-        className="w-full btn-primary justify-center disabled:opacity-60 disabled:cursor-not-allowed"
+        disabled={status === "sending" || status === "sent"}
+        className={`w-full btn-primary justify-center disabled:opacity-60 disabled:cursor-not-allowed ${status === "error" ? "!bg-red-500/80" : ""}`}
         whileHover={status === "idle" ? { scale: 1.01 } : {}}
         whileTap={status === "idle" ? { scale: 0.99 } : {}}
       >
@@ -263,6 +274,12 @@ function ContactForm({ inView: _inView }: { inView: boolean }) {
           <>
             <Check className="h-4 w-4 text-green-300" />
             Message Sent!
+          </>
+        )}
+        {status === "error" && (
+          <>
+            <Send className="h-4 w-4" />
+            Failed — Try Again
           </>
         )}
       </motion.button>
