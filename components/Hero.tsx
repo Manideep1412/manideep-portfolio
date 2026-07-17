@@ -5,7 +5,7 @@ import { ArrowDown, Download, Github, Linkedin, MapPin, Sparkles } from "lucide-
 import Image from "next/image";
 
 const techBadges = [
-  { label: "10", color: "blue" },
+  { label: ".NET 10", color: "blue" },
   { label: "Angular", color: "purple" },
   { label: "React", color: "cyan" },
   { label: "Azure", color: "blue" },
