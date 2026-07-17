@@ -28,7 +28,7 @@ const contactMethods = [
     icon: Github,
     label: "GitHub",
     value: "github.com/Manideep1412",
-    href: "https://github.com/Manideep1412",
+    href: "https://github.com/Manideep1412?tab=repositories",
     desc: "Open source work",
     color: "purple",
     copyable: false,

@@ -3,7 +3,7 @@
 import { Github, Linkedin, Mail, Code2, Heart } from "lucide-react";
 
 const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Github, href: "https://github.com/Manideep1412?tab=repositories", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/manideep-salla-150468279/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:deepu1919.salla@gmail.com", label: "Email" },
 ];
@@ -52,6 +52,8 @@ export default function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text-muted hover:text-accent-blue hover:border-accent-blue/40 hover:bg-accent-blue/5 transition-all"
               >
                 <Icon className="h-4 w-4" />

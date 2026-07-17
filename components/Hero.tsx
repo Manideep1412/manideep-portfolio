@@ -105,7 +105,7 @@ export default function Hero() {
                 <Download className="h-4 w-4" />
                 Download Resume
               </a>
-              <a href="#" aria-label="GitHub" className="btn-secondary px-4">
+              <a href="https://github.com/Manideep1412?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="btn-secondary px-4">
                 <Github className="h-4 w-4" />
               </a>
               <a href="https://www.linkedin.com/in/manideep-salla-150468279/" aria-label="LinkedIn" className="btn-secondary px-4">

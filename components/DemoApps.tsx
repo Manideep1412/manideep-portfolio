@@ -187,7 +187,7 @@ export default function DemoApps() {
             Browse the repositories for architecture decisions, code patterns, and deployment config.
           </p>
           <a
-            href="https://github.com/Manideep1412"
+            href="https://github.com/Manideep1412?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-flex"
