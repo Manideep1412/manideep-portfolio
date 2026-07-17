@@ -17,7 +17,7 @@ const layers = [
     iconBg: "from-accent-blue/30 to-accent-blue/10",
     iconColor: "text-accent-blue",
     items: [
-      "Angular 17 (NgRx, Signals, Standalone)",
+      "Angular 20 (NgRx, Signals, Standalone)",
       "React 18 (Next.js App Router, RSC)",
       "TypeScript — strict mode",
       "Tailwind CSS / PrimeNG / Material",
@@ -36,7 +36,7 @@ const layers = [
     iconBg: "from-accent-purple/30 to-accent-purple/10",
     iconColor: "text-accent-purple",
     items: [
-      ".NET 8 Web API / Minimal APIs",
+      ".NET 10 Web API / Minimal APIs",
       "CQRS with MediatR",
       "FluentValidation & Middleware",
       "OpenAPI 3.0 / Swagger",
