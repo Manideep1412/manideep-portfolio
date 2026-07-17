@@ -7,56 +7,43 @@ import { ExternalLink, Github, Layers, ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Angular Enterprise Dashboard",
+    title: "AI Support Agent",
     description:
-      "A feature-rich enterprise management dashboard built with Angular 17, NgRx state management, and a .NET 8 backend. Features real-time data via SignalR, role-based access control, and advanced data grid with filtering, sorting, and export.",
-    tech: ["Angular 17", "NgRx", "ASP.NET Core", "SignalR", "SQL Server", "RBAC", "Chart.js"],
-    gradient: "from-accent-blue/20 to-accent-purple/10",
-    borderGlow: "hover:border-accent-blue/40",
-    accentColor: "text-accent-blue",
-    badgeColor: "bg-accent-blue/10 border-accent-blue/20 text-accent-blue",
-    demoUrl: "#",
-    githubUrl: "#",
-    tag: "Enterprise SaaS",
-  },
-  {
-    title: "React Client Communication Repository",
-    description:
-      "A centralized communication hub for managing client interactions built with React 18, TypeScript, and Redux Toolkit. Features threaded messaging, file attachments, audit trails, and a .NET Core API with Entity Framework Core.",
-    tech: ["React 18", "Redux Toolkit", "TypeScript", ".NET Core", "EF Core", "PostgreSQL", "Azure Blob"],
-    gradient: "from-accent-purple/20 to-accent-pink/10",
-    borderGlow: "hover:border-accent-purple/40",
-    accentColor: "text-accent-purple",
-    badgeColor: "bg-accent-purple/10 border-accent-purple/20 text-accent-purple",
-    demoUrl: "#",
-    githubUrl: "#",
-    tag: "Communication Platform",
-  },
-  {
-    title: "Next.js AI Job Tracker",
-    description:
-      "An AI-powered job application tracker built with Next.js 15 App Router, Tailwind CSS, and OpenAI integration. Smart resume matching, interview scheduling, pipeline analytics, and a serverless .NET Azure Functions backend.",
-    tech: ["Next.js 15", "TypeScript", "OpenAI API", "Azure Functions", "MongoDB", "Tailwind CSS"],
+      "RAG-powered customer support chatbot built with Next.js 15 and a .NET 9 backend. Uses OpenAI embeddings stored in MongoDB Atlas vector search to deliver semantically relevant answers from a curated knowledge base, with real-time SSE streaming and persistent session history.",
+    tech: ["Next.js 15", "TypeScript", ".NET 9", "OpenAI", "MongoDB Atlas", "Vector Search", "SSE"],
     gradient: "from-accent-cyan/20 to-accent-blue/10",
     borderGlow: "hover:border-accent-cyan/40",
     accentColor: "text-accent-cyan",
     badgeColor: "bg-accent-cyan/10 border-accent-cyan/20 text-accent-cyan",
-    demoUrl: "#",
-    githubUrl: "#",
-    tag: "AI-Powered Tool",
+    demoUrl: "https://ai-support-agent-three-ebon.vercel.app/",
+    githubUrl: "https://github.com/manideepsalla/ai-support-agent",
+    tag: "AI / RAG",
   },
   {
-    title: "Vue Finance Admin Portal",
+    title: "React Client Hub",
     description:
-      "A comprehensive financial administration portal built with Vue 3, Pinia, and Vite. Features advanced reporting, transaction management, compliance dashboards, multi-currency support, and a secure .NET 8 API with Dapper.",
-    tech: ["Vue 3", "Pinia", "Vite", "ASP.NET Core", "Dapper", "SQL Server", "Highcharts"],
-    gradient: "from-green-500/15 to-accent-cyan/10",
-    borderGlow: "hover:border-green-500/40",
-    accentColor: "text-green-400",
-    badgeColor: "bg-green-500/10 border-green-500/20 text-green-400",
-    demoUrl: "#",
-    githubUrl: "#",
-    tag: "FinTech Portal",
+      "Real-time client communication platform built with React 18, Vite, and Zustand. SignalR WebSocket hub powers live messaging across a multi-conversation inbox with contact management, conversation status (open/resolved/closed), and a .NET 9 API backed by SQLite.",
+    tech: ["React 18", "Vite", "TypeScript", "Zustand", "SignalR", ".NET 9", "SQLite"],
+    gradient: "from-accent-purple/20 to-accent-pink/10",
+    borderGlow: "hover:border-accent-purple/40",
+    accentColor: "text-accent-purple",
+    badgeColor: "bg-accent-purple/10 border-accent-purple/20 text-accent-purple",
+    demoUrl: "https://react-client-hub.vercel.app/login",
+    githubUrl: "https://github.com/manideepsalla/react-client-hub",
+    tag: "Real-time Platform",
+  },
+  {
+    title: "Angular Enterprise Dashboard",
+    description:
+      "Enterprise Identity & Access Management dashboard built with Angular 19 and a .NET 9 API. JWT authentication with role-based access control (Admin / Manager), user and role management, audit log viewer, and a secured SQLite-backed backend with Swagger docs.",
+    tech: ["Angular 19", "TypeScript", ".NET 9", "JWT", "RBAC", "SQLite", "Swagger"],
+    gradient: "from-accent-blue/20 to-accent-purple/10",
+    borderGlow: "hover:border-accent-blue/40",
+    accentColor: "text-accent-blue",
+    badgeColor: "bg-accent-blue/10 border-accent-blue/20 text-accent-blue",
+    demoUrl: "https://angular-enterprise-dashboard-iota.vercel.app/",
+    githubUrl: "https://github.com/manideepsalla/angular-enterprise-dashboard",
+    tag: "Enterprise IAM",
   },
 ];
 
@@ -133,6 +120,8 @@ export default function Projects() {
                 <div className="flex items-center gap-3">
                   <a
                     href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-sm font-semibold text-text-primary hover:text-accent-blue transition-colors group/link"
                   >
                     Live Demo
@@ -141,6 +130,8 @@ export default function Projects() {
                   <span className="text-border">|</span>
                   <a
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors"
                   >
                     <Github className="h-4 w-4" />

@@ -7,82 +7,62 @@ import { ExternalLink, Github, BookOpen, Play } from "lucide-react";
 
 const demoApps = [
   {
-    title: "Angular Enterprise Dashboard",
-    subtitle: "Angular 17 + .NET 8 + SignalR",
+    title: "AI Support Agent",
+    subtitle: "Next.js 15 · .NET 9 · OpenAI · MongoDB Atlas",
     description:
-      "Full enterprise management dashboard with real-time updates, NgRx state management, data grid, charts, and RBAC authentication.",
+      "RAG-powered support chatbot with semantic vector search. Ask any question and the agent retrieves the most relevant knowledge base articles using OpenAI embeddings, streams the answer in real time, and persists conversation history across sessions.",
     features: [
-      "Real-time SignalR notifications",
-      "NgRx state with effects",
-      "Advanced filtering & export",
-      "Role-based UI rendering",
-      "Lazy-loaded feature modules",
-    ],
-    gradient: "from-accent-blue to-accent-purple",
-    glowColor: "rgba(79,142,247,0.15)",
-    demoUrl: "#",
-    githubUrl: "#",
-    docsUrl: "#",
-    status: "Live",
-    statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
-  },
-  {
-    title: "React Client Communication Hub",
-    subtitle: "React 18 + Redux Toolkit + .NET Core",
-    description:
-      "Centralized client communication platform with threaded messages, file attachments, audit trails, and full audit logging.",
-    features: [
-      "Threaded conversation UI",
-      "File upload (Azure Blob)",
-      "Full audit trail",
-      "Search & filter inbox",
-      "Notification system",
-    ],
-    gradient: "from-accent-purple to-accent-pink",
-    glowColor: "rgba(168,85,247,0.15)",
-    demoUrl: "#",
-    githubUrl: "#",
-    docsUrl: "#",
-    status: "Live",
-    statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
-  },
-  {
-    title: "Next.js AI Job Tracker",
-    subtitle: "Next.js 15 + OpenAI + Azure Functions",
-    description:
-      "AI-powered job application tracker with smart resume matching, interview scheduling, pipeline analytics, and AI cover letter generation.",
-    features: [
-      "OpenAI resume matching",
-      "Interview pipeline kanban",
-      "Application analytics",
-      "AI cover letter drafts",
-      "Calendar integration",
+      "Vector search via MongoDB Atlas",
+      "OpenAI GPT-4o mini with SSE streaming",
+      "Knowledge base admin (add / embed articles)",
+      "Session history with sidebar navigation",
+      "Containerised .NET 9 API on Render",
     ],
     gradient: "from-accent-cyan to-accent-blue",
     glowColor: "rgba(34,211,238,0.15)",
-    demoUrl: "#",
-    githubUrl: "#",
-    docsUrl: "#",
-    status: "Beta",
-    statusColor: "text-yellow-400 bg-yellow-400/10 border-yellow-400/25",
+    demoUrl: "https://ai-support-agent-three-ebon.vercel.app/",
+    githubUrl: "https://github.com/manideepsalla/ai-support-agent",
+    docsUrl: "https://ai-support-agent-api.onrender.com/swagger",
+    status: "Live",
+    statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
   },
   {
-    title: "Vue Finance Admin Portal",
-    subtitle: "Vue 3 + Pinia + ASP.NET Core + Dapper",
+    title: "React Client Hub",
+    subtitle: "React 18 · Vite · Zustand · SignalR · .NET 9",
     description:
-      "Comprehensive financial administration with transaction management, compliance dashboards, multi-currency reporting, and role-based access.",
+      "Real-time client communication platform. A SignalR WebSocket hub pushes messages instantly across a multi-conversation inbox. Agents can create contacts, open conversations, and mark threads resolved or closed — all updating live without a page refresh.",
     features: [
-      "Multi-currency support",
-      "Compliance dashboards",
-      "Advanced reporting",
-      "Transaction audit log",
-      "Export to PDF/Excel",
+      "Real-time messaging via SignalR WebSockets",
+      "Multi-conversation inbox with unread counts",
+      "Create contact + open conversation flow",
+      "Resolve / Close conversation actions",
+      "JWT-secured .NET 9 API on Render",
     ],
-    gradient: "from-green-500 to-accent-cyan",
-    glowColor: "rgba(34,211,238,0.12)",
-    demoUrl: "#",
-    githubUrl: "#",
-    docsUrl: "#",
+    gradient: "from-accent-purple to-accent-pink",
+    glowColor: "rgba(168,85,247,0.15)",
+    demoUrl: "https://react-client-hub.vercel.app/login",
+    githubUrl: "https://github.com/manideepsalla/react-client-hub",
+    docsUrl: "https://react-client-hub-api.onrender.com/swagger",
+    status: "Live",
+    statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
+  },
+  {
+    title: "Angular Enterprise Dashboard",
+    subtitle: "Angular 19 · .NET 9 · JWT · RBAC · SQLite",
+    description:
+      "Enterprise Identity & Access Management dashboard with role-based access control. Admins manage users and roles; Managers get a read-only view. Every sensitive action is captured in an immutable audit log. Login with the demo credentials shown on the login page.",
+    features: [
+      "JWT authentication with refresh tokens",
+      "Admin / Manager role-based UI rendering",
+      "User and role management screens",
+      "Immutable audit log with filtering",
+      "Swagger API docs on Render backend",
+    ],
+    gradient: "from-accent-blue to-accent-purple",
+    glowColor: "rgba(79,142,247,0.15)",
+    demoUrl: "https://angular-enterprise-dashboard-iota.vercel.app/",
+    githubUrl: "https://github.com/manideepsalla/angular-enterprise-dashboard",
+    docsUrl: "https://angular-dashboard-api.onrender.com/swagger",
     status: "Live",
     statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
   },
@@ -108,8 +88,8 @@ export default function DemoApps() {
             Try Them Live
           </h2>
           <p className="mt-4 text-text-secondary max-w-xl mx-auto">
-            Deployed applications you can interact with. Full source code available on GitHub with
-            API documentation.
+            Deployed applications you can interact with right now. Full source code on GitHub with
+            Swagger API documentation.
           </p>
         </motion.div>
 
@@ -121,9 +101,6 @@ export default function DemoApps() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12 }}
               className="group glass rounded-2xl overflow-hidden glass-hover border border-border hover:border-border-glow transition-all duration-300"
-              style={{
-                boxShadow: `0 0 0 rgba(0,0,0,0)`,
-              }}
               whileHover={{
                 boxShadow: `0 20px 60px ${app.glowColor}`,
               }}
@@ -165,6 +142,8 @@ export default function DemoApps() {
                 <div className="flex flex-wrap gap-3 pt-5 border-t border-border/50">
                   <a
                     href={app.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 sm:flex-none btn-primary text-sm py-2.5 justify-center"
                   >
                     <Play className="h-3.5 w-3.5" />
@@ -172,6 +151,8 @@ export default function DemoApps() {
                   </a>
                   <a
                     href={app.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 sm:flex-none btn-secondary text-sm py-2.5 justify-center"
                   >
                     <Github className="h-3.5 w-3.5" />
@@ -179,6 +160,8 @@ export default function DemoApps() {
                   </a>
                   <a
                     href={app.docsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex-1 sm:flex-none btn-secondary text-sm py-2.5 justify-center"
                   >
                     <BookOpen className="h-3.5 w-3.5" />
@@ -194,16 +177,21 @@ export default function DemoApps() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-10 glass rounded-2xl p-7 text-center border border-border"
         >
           <p className="text-text-secondary mb-2">
             All projects are open source with full documentation.
           </p>
           <p className="text-text-muted text-sm mb-5">
-            Browse the repositories for architecture decisions, code patterns, and testing strategies.
+            Browse the repositories for architecture decisions, code patterns, and deployment config.
           </p>
-          <a href="#" className="btn-secondary inline-flex">
+          <a
+            href="https://github.com/manideepsalla"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary inline-flex"
+          >
             <Github className="h-4 w-4" />
             View All Projects on GitHub
             <ExternalLink className="h-3.5 w-3.5" />
