@@ -16,7 +16,7 @@ const projects = [
     accentColor: "text-accent-cyan",
     badgeColor: "bg-accent-cyan/10 border-accent-cyan/20 text-accent-cyan",
     demoUrl: "https://ai-support-agent-three-ebon.vercel.app/",
-    githubUrl: "https://github.com/manideepsalla/ai-support-agent",
+    githubUrl: "https://github.com/Manideep1412/ai-support-agent",
     tag: "AI / RAG",
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     accentColor: "text-accent-purple",
     badgeColor: "bg-accent-purple/10 border-accent-purple/20 text-accent-purple",
     demoUrl: "https://react-client-hub.vercel.app/login",
-    githubUrl: "https://github.com/manideepsalla/react-client-hub",
+    githubUrl: "https://github.com/Manideep1412/react-client-hub",
     tag: "Real-time Platform",
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     accentColor: "text-accent-blue",
     badgeColor: "bg-accent-blue/10 border-accent-blue/20 text-accent-blue",
     demoUrl: "https://angular-enterprise-dashboard-iota.vercel.app/",
-    githubUrl: "https://github.com/manideepsalla/angular-enterprise-dashboard",
+    githubUrl: "https://github.com/Manideep1412/angular-enterprise-dashboard",
     tag: "Enterprise IAM",
   },
 ];

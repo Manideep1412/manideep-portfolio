@@ -21,8 +21,8 @@ const demoApps = [
     gradient: "from-accent-cyan to-accent-blue",
     glowColor: "rgba(34,211,238,0.15)",
     demoUrl: "https://ai-support-agent-three-ebon.vercel.app/",
-    githubUrl: "https://github.com/manideepsalla/ai-support-agent",
-    docsUrl: "https://ai-support-agent-api.onrender.com/swagger",
+    githubUrl: "https://github.com/Manideep1412/ai-support-agent",
+    docsUrl: "https://ai-support-agent-api.onrender.com/swagger/index.html",
     status: "Live",
     statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
   },
@@ -41,8 +41,8 @@ const demoApps = [
     gradient: "from-accent-purple to-accent-pink",
     glowColor: "rgba(168,85,247,0.15)",
     demoUrl: "https://react-client-hub.vercel.app/login",
-    githubUrl: "https://github.com/manideepsalla/react-client-hub",
-    docsUrl: "https://react-client-hub-api.onrender.com/swagger",
+    githubUrl: "https://github.com/Manideep1412/react-client-hub",
+    docsUrl: "https://react-client-hub-api.onrender.com/swagger/index.html",
     status: "Live",
     statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
   },
@@ -61,8 +61,8 @@ const demoApps = [
     gradient: "from-accent-blue to-accent-purple",
     glowColor: "rgba(79,142,247,0.15)",
     demoUrl: "https://angular-enterprise-dashboard-iota.vercel.app/",
-    githubUrl: "https://github.com/manideepsalla/angular-enterprise-dashboard",
-    docsUrl: "https://angular-dashboard-api.onrender.com/swagger",
+    githubUrl: "https://github.com/Manideep1412/angular-enterprise-dashboard",
+    docsUrl: "https://angular-dashboard-api.onrender.com/swagger/index.html",
     status: "Live",
     statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
   },
@@ -187,7 +187,7 @@ export default function DemoApps() {
             Browse the repositories for architecture decisions, code patterns, and deployment config.
           </p>
           <a
-            href="https://github.com/manideepsalla"
+            href="https://github.com/Manideep1412"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary inline-flex"
