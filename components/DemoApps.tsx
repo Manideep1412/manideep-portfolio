@@ -22,7 +22,7 @@ const demoApps = [
     glowColor: "rgba(34,211,238,0.15)",
     demoUrl: "https://ai-support-agent-three-ebon.vercel.app/",
     githubUrl: "https://github.com/Manideep1412/ai-support-agent",
-    docsUrl: "https://ai-support-agent-api.onrender.com/swagger/index.html",
+    docsUrl: "https://ai-support-agent-api-d8al.onrender.com/swagger/index.html",
     status: "Live",
     statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
   },
