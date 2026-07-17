@@ -174,7 +174,7 @@ export default function Contact() {
   );
 }
 
-function ContactForm({ inView }: { inView: boolean }) {
+function ContactForm({ inView: _inView }: { inView: boolean }) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
