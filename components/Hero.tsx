@@ -90,7 +90,7 @@ export default function Hero() {
               microservices, and Azure. Based in{" "}
               <span className="inline-flex items-center gap-1 text-text-primary">
                 <MapPin className="h-4 w-4 text-accent-blue" />
-                Canada
+                Abbotsford, BC, Canada
               </span>
               , working globally.
             </motion.p>

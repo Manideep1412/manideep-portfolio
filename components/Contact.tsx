@@ -36,7 +36,7 @@ const contactMethods = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Canada",
+    value: "Abbotsford, BC, Canada",
     href: null,
     desc: "Open to remote globally",
     color: "cyan",

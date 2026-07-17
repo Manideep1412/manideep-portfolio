@@ -98,7 +98,7 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-bold text-text-primary">Manideep Salla</h3>
                 <p className="text-accent-blue text-sm font-medium mt-0.5">Full Stack .NET Developer</p>
-                <p className="text-text-muted text-xs mt-1">📍 Canada · 10+ Years Experience</p>
+                <p className="text-text-muted text-xs mt-1">📍 Abbotsford, BC, Canada · 10+ Years Experience</p>
                 <div className="flex gap-2 mt-3">
                   <span className="text-xs px-2.5 py-1 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue font-medium">Open to Work</span>
                   <span className="text-xs px-2.5 py-1 rounded-full bg-surface-2 border border-border text-text-muted">Remote Ready</span>
@@ -112,7 +112,7 @@ export default function About() {
               </h3>
               <div className="space-y-4 text-text-secondary leading-relaxed">
                 <p>
-                  Based in <strong className="text-text-primary">Canada</strong>, I specialize in
+                  Based in <strong className="text-text-primary">Abbotsford, BC, Canada</strong>, I specialize in
                   building secure, scalable enterprise applications using the Microsoft .NET ecosystem
                   alongside modern JavaScript frameworks. My core strength lies in bridging backend
                   complexity with clean, performant frontends.
@@ -138,7 +138,7 @@ export default function About() {
               </h3>
               <div className="space-y-3">
                 {[
-                  { label: "Location", value: "Canada" },
+                  { label: "Location", value: "Abbotsford, BC, Canada" },
                   { label: "Experience", value: "10+ Years" },
                   { label: "Focus", value: ".NET / Angular / React" },
                   { label: "Availability", value: "Open to Opportunities" },
