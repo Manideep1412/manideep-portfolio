@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Monitor, Server, Cloud, Database, Shield, TestTube } from "lucide-react";
+import { Monitor, Server, Cloud, Database, Shield, TestTube, Brain } from "lucide-react";
 
 const skillGroups = [
   {
@@ -80,6 +80,20 @@ const skillGroups = [
     ],
   },
   {
+    category: "AI & Machine Learning",
+    icon: Brain,
+    color: "pink",
+    skills: [
+      { name: "OpenAI API / GPT-4o", level: 85 },
+      { name: "RAG (Retrieval-Augmented Gen)", level: 82 },
+      { name: "Vector Embeddings", level: 80 },
+      { name: "MongoDB Atlas Vector Search", level: 78 },
+      { name: "Prompt Engineering", level: 85 },
+      { name: "SSE / AI Streaming", level: 80 },
+      { name: "LLM Integration (.NET)", level: 78 },
+    ],
+  },
+  {
     category: "Testing",
     icon: TestTube,
     color: "cyan",
@@ -113,6 +127,12 @@ const colorConfig: Record<string, { bar: string; icon: string; border: string; b
     icon: "text-accent-cyan",
     border: "border-accent-cyan/20",
     bg: "from-accent-cyan/10 to-accent-cyan/5",
+  },
+  pink: {
+    bar: "from-accent-pink to-accent-purple",
+    icon: "text-accent-pink",
+    border: "border-accent-pink/20",
+    bg: "from-accent-pink/10 to-accent-pink/5",
   },
 };
 
