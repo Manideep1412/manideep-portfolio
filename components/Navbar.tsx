@@ -38,8 +38,14 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    // scrollIntoView is unreliable on Android Chrome — use window.scrollTo instead.
+    // 50ms delay lets the mobile menu finish closing before we scroll.
+    setTimeout(() => {
+      const el = document.getElementById(href.slice(1));
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
+    }, 50);
   };
 
   return (

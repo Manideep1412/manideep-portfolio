@@ -42,11 +42,11 @@ export default function Hero() {
       {/* Background hero glow */}
       <div className="absolute inset-0 bg-hero-glow pointer-events-none" />
 
-      {/* Floating orb */}
+      {/* Floating orb — hidden on mobile to avoid overflow */}
       <motion.div
         animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 right-1/4 h-80 w-80 rounded-full bg-accent-purple/8 blur-[100px] pointer-events-none"
+        className="hidden sm:block absolute top-1/4 right-1/4 h-80 w-80 rounded-full bg-accent-purple/8 blur-[100px] pointer-events-none"
       />
 
       <div className="mx-auto max-w-7xl w-full">
@@ -197,31 +197,31 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating experience badge */}
+              {/* Floating experience badge — hidden on mobile to prevent overflow */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-3 -right-4 glass rounded-xl px-4 py-2.5 border border-accent-blue/30 shadow-lg"
+                className="hidden sm:block absolute -bottom-3 -right-4 glass rounded-xl px-4 py-2.5 border border-accent-blue/30 shadow-lg"
               >
                 <p className="text-xs text-text-muted leading-none mb-0.5">Experience</p>
                 <p className="text-lg font-extrabold gradient-text leading-none">10+ Yrs</p>
               </motion.div>
 
-              {/* Floating .NET badge */}
+              {/* Floating .NET badge — hidden on mobile to prevent overflow */}
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -top-2 -left-6 glass rounded-xl px-3 py-2 border border-accent-purple/30 shadow-lg"
+                className="hidden sm:block absolute -top-2 -left-6 glass rounded-xl px-3 py-2 border border-accent-purple/30 shadow-lg"
               >
                 <p className="text-xs font-mono font-semibold text-accent-purple">.NET 10</p>
                 <p className="text-xs text-text-muted">ASP.NET Core</p>
               </motion.div>
 
-              {/* Floating AI badge */}
+              {/* Floating AI badge — hidden on mobile to prevent overflow */}
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute -bottom-3 -left-8 glass rounded-xl px-3 py-2 border border-emerald-400/30 shadow-lg"
+                className="hidden sm:block absolute -bottom-3 -left-8 glass rounded-xl px-3 py-2 border border-emerald-400/30 shadow-lg"
               >
                 <p className="text-xs font-mono font-semibold text-emerald-400">AI Integration</p>
                 <p className="text-xs text-text-muted">GPT-4o · Deepgram</p>
