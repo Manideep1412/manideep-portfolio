@@ -26,10 +26,10 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
+        <DemoApps />
         <BackendEngineering />
         <Architecture />
         <Experience />
-        <DemoApps />
         <Contact />
         <Footer />
       </div>
