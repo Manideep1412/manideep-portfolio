@@ -10,7 +10,7 @@ import {
   Shield,
   Zap,
   Users,
-  Award,
+  Brain,
 } from "lucide-react";
 
 const highlights = [
@@ -40,9 +40,9 @@ const highlights = [
     desc: "Working closely with product, design, and QA teams in Agile environments. Mentoring junior developers and conducting technical code reviews.",
   },
   {
-    icon: Award,
-    title: "Continuous Learner",
-    desc: "Staying current with .NET 10, Angular signals, React Server Components, and AI-assisted development workflows.",
+    icon: Brain,
+    title: "AI-Integrated Development",
+    desc: "Building production apps powered by OpenAI GPT-4o, RAG pipelines, vector search, Deepgram voice AI, and real-time LLM streaming — integrated directly into full-stack .NET and Next.js products.",
   },
 ];
 
@@ -67,8 +67,9 @@ export default function About() {
             The Developer Behind the Code
           </h2>
           <p className="mt-4 text-text-secondary max-w-2xl mx-auto text-lg">
-            I&apos;m a Full Stack developer with 10+ years of experience building enterprise
-            applications that are secure, performant, and built to last.
+            Full Stack .NET developer with 10+ years of enterprise experience — now building
+            AI-integrated products with OpenAI, RAG pipelines, and voice AI on top of the
+            same battle-tested .NET and Angular foundations.
           </p>
         </motion.div>
 
@@ -97,7 +98,7 @@ export default function About() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-text-primary">Manideep Salla</h3>
-                <p className="text-accent-blue text-sm font-medium mt-0.5">Full Stack .NET Developer</p>
+                <p className="text-accent-blue text-sm font-medium mt-0.5">Full Stack .NET & AI Developer</p>
                 <p className="text-text-muted text-xs mt-1">📍 Abbotsford, BC, Canada · 10+ Years Experience</p>
                 <div className="flex gap-2 mt-3">
                   <span className="text-xs px-2.5 py-1 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue font-medium">Open to Work</span>
@@ -124,9 +125,10 @@ export default function About() {
                   used daily by enterprise teams.
                 </p>
                 <p>
-                  Outside of coding, I&apos;m passionate about software architecture, security
-                  engineering, and helping teams deliver better software faster through automation
-                  and clean design principles.
+                  Outside of my enterprise work, I&apos;m actively building AI-integrated products —
+                  combining <strong className="text-text-primary">OpenAI GPT-4o</strong>, RAG pipelines,
+                  vector search, and voice AI (Deepgram) with full-stack .NET and Next.js architectures.
+                  I&apos;m passionate about bringing AI capabilities into practical, production-ready applications.
                 </p>
               </div>
             </div>
@@ -140,7 +142,7 @@ export default function About() {
                 {[
                   { label: "Location", value: "Abbotsford, BC, Canada" },
                   { label: "Experience", value: "10+ Years" },
-                  { label: "Focus", value: ".NET / Angular / React" },
+                  { label: "Focus", value: ".NET / Angular / React / AI" },
                   { label: "Availability", value: "Open to Opportunities" },
                   { label: "Work Style", value: "Remote / Hybrid" },
                 ].map((fact) => (

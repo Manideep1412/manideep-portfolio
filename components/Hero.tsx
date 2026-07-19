@@ -8,10 +8,12 @@ const techBadges = [
   { label: ".NET 10", color: "blue" },
   { label: "Angular", color: "purple" },
   { label: "React", color: "cyan" },
+  { label: "GPT-4o", color: "emerald" },
   { label: "Azure", color: "blue" },
   { label: "TypeScript", color: "purple" },
   { label: "C#", color: "cyan" },
   { label: "Microservices", color: "blue" },
+  { label: "RAG / Vector Search", color: "emerald" },
   { label: "OAuth2 / OIDC", color: "purple" },
 ];
 
@@ -19,6 +21,7 @@ const colorMap: Record<string, string> = {
   blue: "bg-accent-blue/10 border-accent-blue/25 text-accent-blue",
   purple: "bg-accent-purple/10 border-accent-purple/25 text-accent-purple",
   cyan: "bg-accent-cyan/10 border-accent-cyan/25 text-accent-cyan",
+  emerald: "bg-emerald-400/10 border-emerald-400/25 text-emerald-400",
 };
 
 const container = {
@@ -76,7 +79,7 @@ export default function Hero() {
               <span className="gradient-text">.NET Developer</span>
               <br />
               <span className="text-text-primary">building </span>
-              <span className="gradient-text-blue">secure, scalable</span>
+              <span className="gradient-text-blue">AI-integrated,</span>
               <br />
               <span className="text-text-primary">enterprise apps.</span>
             </motion.h1>
@@ -87,7 +90,9 @@ export default function Hero() {
               className="mt-6 text-lg text-text-secondary max-w-xl leading-relaxed"
             >
               10+ years shipping production-grade software across Angular, React, ASP.NET Core,
-              microservices, and Azure. Based in{" "}
+              microservices, and Azure — now integrating{" "}
+              <span className="text-emerald-400 font-medium">OpenAI, RAG pipelines, and voice AI</span>{" "}
+              into real-world products. Based in{" "}
               <span className="inline-flex items-center gap-1 text-text-primary">
                 <MapPin className="h-4 w-4 text-accent-blue" />
                 Abbotsford, BC, Canada
@@ -211,12 +216,22 @@ export default function Hero() {
                 <p className="text-xs font-mono font-semibold text-accent-purple">.NET 10</p>
                 <p className="text-xs text-text-muted">ASP.NET Core</p>
               </motion.div>
+
+              {/* Floating AI badge */}
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute top-1/2 -right-8 glass rounded-xl px-3 py-2 border border-emerald-400/30 shadow-lg"
+              >
+                <p className="text-xs font-mono font-semibold text-emerald-400">GPT-4o</p>
+                <p className="text-xs text-text-muted">AI Integration</p>
+              </motion.div>
             </div>
 
             {/* Name + title below photo */}
             <div className="text-center">
               <p className="font-bold text-text-primary text-lg">Manideep Salla</p>
-              <p className="text-sm text-text-muted">Full Stack .NET Developer</p>
+              <p className="text-sm text-text-muted">Full Stack .NET & AI Developer</p>
             </div>
           </motion.div>
 
