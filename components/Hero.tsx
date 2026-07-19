@@ -221,10 +221,10 @@ export default function Hero() {
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute top-1/2 -right-8 glass rounded-xl px-3 py-2 border border-emerald-400/30 shadow-lg"
+                className="absolute -bottom-3 -left-8 glass rounded-xl px-3 py-2 border border-emerald-400/30 shadow-lg"
               >
-                <p className="text-xs font-mono font-semibold text-emerald-400">GPT-4o</p>
-                <p className="text-xs text-text-muted">AI Integration</p>
+                <p className="text-xs font-mono font-semibold text-emerald-400">AI Integration</p>
+                <p className="text-xs text-text-muted">GPT-4o · Deepgram</p>
               </motion.div>
             </div>
 
