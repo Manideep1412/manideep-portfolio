@@ -7,6 +7,19 @@ import { ExternalLink, Github, Layers, ArrowRight } from "lucide-react";
 
 const projects = [
   {
+    title: "AI Interview Coach",
+    description:
+      "Voice-powered interview preparation platform built with Next.js 15 and GPT-4o. Speak your answers, get instant AI scoring across five dimensions (clarity, depth, examples, delivery, overall), and hear feedback read aloud. Ships with 300 hand-crafted questions across 10 categories plus a Custom Topic feature that generates questions for any technology or role.",
+    tech: ["Next.js 15", "TypeScript", "GPT-4o", "Deepgram", "Edge Runtime", "Web Audio API"],
+    gradient: "from-emerald-500/20 to-amber-500/10",
+    borderGlow: "hover:border-emerald-400/40",
+    accentColor: "text-emerald-400",
+    badgeColor: "bg-emerald-400/10 border-emerald-400/20 text-emerald-400",
+    demoUrl: "https://ai-interview-coach-sage-phi.vercel.app/",
+    githubUrl: "https://github.com/Manideep1412/ai-interview-coach",
+    tag: "Voice AI",
+  },
+  {
     title: "AI Support Agent",
     description:
       "RAG-powered customer support chatbot built with Next.js 15 and a .NET 9 backend. Uses OpenAI embeddings stored in MongoDB Atlas vector search to deliver semantically relevant answers from a curated knowledge base, with real-time SSE streaming and persistent session history.",

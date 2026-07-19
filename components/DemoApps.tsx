@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github, BookOpen, Play, Mic } from "lucide-react";
+import { ExternalLink, Github, BookOpen, Play } from "lucide-react";
 
 interface DemoApp {
   title: string;
@@ -17,7 +17,7 @@ interface DemoApp {
   docsUrl?: string;
   status: string;
   statusColor: string;
-  featured?: boolean;
+  badge?: { label: string; color: string };
 }
 
 const demoApps: DemoApp[] = [
@@ -39,7 +39,7 @@ const demoApps: DemoApp[] = [
     githubUrl: "https://github.com/Manideep1412/ai-interview-coach",
     status: "Live",
     statusColor: "text-green-400 bg-green-400/10 border-green-400/25",
-    featured: true,
+    badge: { label: "🎤 Voice AI", color: "text-amber-400 bg-amber-400/10 border-amber-400/25" },
   },
   {
     title: "AI Support Agent",
@@ -135,54 +135,48 @@ export default function DemoApps() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className={`group glass rounded-2xl overflow-hidden glass-hover border border-border hover:border-border-glow transition-all duration-300 ${app.featured ? "lg:col-span-2" : ""}`}
+              className="group glass rounded-2xl overflow-hidden glass-hover border border-border hover:border-border-glow transition-all duration-300 flex flex-col"
               whileHover={{ boxShadow: `0 20px 60px ${app.glowColor}` }}
             >
               {/* Gradient header banner */}
-              <div className={`h-2 bg-gradient-to-r ${app.gradient}`} />
+              <div className={`h-2 bg-gradient-to-r ${app.gradient} flex-shrink-0`} />
 
-              <div className="p-7">
-                <div className={`${app.featured ? "lg:flex lg:gap-10" : ""}`}>
-                  {/* Left / main content */}
-                  <div className={app.featured ? "lg:flex-1" : ""}>
-                    {/* Title row */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${app.statusColor}`}>
-                            {app.status}
-                          </span>
-                          {app.featured && (
-                            <span className="text-xs font-medium px-2.5 py-0.5 rounded-full border border-amber-400/30 text-amber-400 bg-amber-400/10 flex items-center gap-1">
-                              <Mic className="h-3 w-3" /> Voice AI
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="text-lg font-bold text-text-primary group-hover:text-white transition-colors">
-                          {app.title}
-                        </h3>
-                        <p className="text-xs font-mono text-text-muted mt-0.5">{app.subtitle}</p>
-                      </div>
-                    </div>
-
-                    <p className="text-sm text-text-secondary leading-relaxed mb-5">
-                      {app.description}
-                    </p>
-                  </div>
-
-                  {/* Feature list */}
-                  <ul className={`space-y-1.5 mb-6 ${app.featured ? "lg:flex-1 lg:mb-0 lg:self-start lg:mt-0 mt-0" : ""}`}>
-                    {app.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-text-muted">
-                        <div className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${app.gradient} flex-shrink-0`} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+              <div className="p-7 flex flex-col flex-1">
+                {/* Badges */}
+                <div className="flex items-center gap-2 mb-3">
+                  <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${app.statusColor}`}>
+                    {app.status}
+                  </span>
+                  {app.badge && (
+                    <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${app.badge.color}`}>
+                      {app.badge.label}
+                    </span>
+                  )}
                 </div>
 
-                {/* CTA buttons */}
-                <div className="flex flex-wrap gap-3 pt-5 border-t border-border/50">
+                {/* Title */}
+                <h3 className="text-lg font-bold text-text-primary group-hover:text-white transition-colors mb-0.5">
+                  {app.title}
+                </h3>
+                <p className="text-xs font-mono text-text-muted mb-4">{app.subtitle}</p>
+
+                {/* Description */}
+                <p className="text-sm text-text-secondary leading-relaxed mb-5">
+                  {app.description}
+                </p>
+
+                {/* Feature list */}
+                <ul className="space-y-1.5 mb-6 flex-1">
+                  {app.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2 text-sm text-text-muted">
+                      <div className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${app.gradient} flex-shrink-0`} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA buttons — pinned to bottom */}
+                <div className="flex flex-wrap gap-3 pt-5 border-t border-border/50 mt-auto">
                   <a
                     href={app.demoUrl}
                     target="_blank"
