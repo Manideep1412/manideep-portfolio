@@ -135,7 +135,7 @@ export default function Projects() {
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 className={`glass rounded-2xl overflow-hidden glass-hover border-l-4 ${project.borderClass}`}
               >
-                <div className="p-7 lg:p-8">
+                <div className="p-5 sm:p-7 lg:p-8">
                   <div className="flex flex-col lg:flex-row lg:gap-10">
 
                     {/* ── Left panel ── */}
@@ -161,7 +161,7 @@ export default function Projects() {
                       </div>
 
                       {/* Client info */}
-                      <div className="space-y-0.5 mb-5 pl-12">
+                      <div className="space-y-0.5 mb-5 pl-0 sm:pl-12">
                         <p className="text-sm font-medium text-text-secondary">{project.client}</p>
                         {project.via !== "Direct" && (
                           <p className="text-xs text-text-muted">via {project.via}</p>

@@ -108,7 +108,7 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="space-y-4"
           >
-            <div className="glass rounded-2xl p-7 mb-6">
+            <div className="glass rounded-2xl p-5 sm:p-7 mb-6">
               <h3 className="text-lg font-bold text-text-primary mb-2">
                 Open to Opportunities
               </h3>
@@ -199,7 +199,7 @@ function ContactForm({ inView: _inView }: { inView: boolean }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="glass rounded-2xl p-7 space-y-5"
+      className="glass rounded-2xl p-5 sm:p-7 space-y-5"
     >
       <h3 className="text-lg font-bold text-text-primary">Send a Message</h3>
 

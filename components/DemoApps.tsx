@@ -141,7 +141,7 @@ export default function DemoApps() {
               {/* Gradient header banner */}
               <div className={`h-2 bg-gradient-to-r ${app.gradient} flex-shrink-0`} />
 
-              <div className="p-7 flex flex-col flex-1">
+              <div className="p-5 sm:p-7 flex flex-col flex-1">
                 {/* Badges */}
                 <div className="flex items-center gap-2 mb-3">
                   <span className={`text-xs font-medium px-2.5 py-0.5 rounded-full border ${app.statusColor}`}>
@@ -217,7 +217,7 @@ export default function DemoApps() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 glass rounded-2xl p-7 text-center border border-border"
+          className="mt-10 glass rounded-2xl p-5 sm:p-7 text-center border border-border"
         >
           <p className="text-text-secondary mb-2">
             All projects are open source with full documentation.

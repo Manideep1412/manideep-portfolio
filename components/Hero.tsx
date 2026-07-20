@@ -73,7 +73,7 @@ export default function Hero() {
             {/* Main headline */}
             <motion.h1
               variants={item}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight"
+              className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight"
             >
               <span className="text-text-primary">Full Stack</span>{" "}
               <span className="gradient-text">.NET Developer</span>
@@ -101,12 +101,12 @@ export default function Hero() {
             </motion.p>
 
             {/* CTA buttons */}
-            <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">
-              <a href="#projects" className="btn-primary">
+            <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
+              <a href="#projects" className="btn-primary w-full sm:w-auto justify-center">
                 <Sparkles className="h-4 w-4" />
                 View My Work
               </a>
-              <a href="/resume.pdf" download className="btn-secondary">
+              <a href="/resume.pdf" download className="btn-secondary w-full sm:w-auto justify-center">
                 <Download className="h-4 w-4" />
                 Download Resume
               </a>
@@ -186,12 +186,12 @@ export default function Hero() {
               <div className="absolute -inset-4 rounded-full bg-accent-purple/10 blur-xl" />
 
               {/* Photo container */}
-              <div className="relative h-64 w-64 sm:h-72 sm:w-72 lg:h-80 lg:w-80 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl">
+              <div className="relative h-48 w-48 sm:h-64 sm:w-64 lg:h-80 lg:w-80 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl">
                 <Image
                   src="/profile.png"
                   alt="Manideep Salla — Full Stack .NET Developer"
                   fill
-                  sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
+                  sizes="(max-width: 640px) 192px, (max-width: 1024px) 256px, 320px"
                   className="object-cover object-top"
                   priority
                 />

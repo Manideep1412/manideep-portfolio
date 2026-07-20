@@ -107,7 +107,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="glass rounded-2xl p-8 glass-hover">
+            <div className="glass rounded-2xl p-5 sm:p-8 glass-hover">
               <h3 className="text-xl font-bold text-text-primary mb-4">
                 Who I Am
               </h3>

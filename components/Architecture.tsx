@@ -148,7 +148,7 @@ export default function Architecture() {
               {/* Background gradient */}
               <div className={`absolute inset-0 bg-gradient-to-r ${layer.gradient} opacity-60`} />
 
-              <div className="relative p-6 lg:p-7">
+              <div className="relative p-4 sm:p-6 lg:p-7">
                 <div className="flex flex-col sm:flex-row sm:items-start gap-5">
                   {/* Icon + labels */}
                   <div className="flex items-center gap-4 sm:flex-col sm:items-center sm:text-center sm:min-w-[120px]">
@@ -198,7 +198,7 @@ export default function Architecture() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 glass rounded-2xl p-8"
+          className="mt-12 glass rounded-2xl p-5 sm:p-8"
         >
           <h3 className="text-lg font-bold text-text-primary mb-6 text-center">
             Core Design Principles

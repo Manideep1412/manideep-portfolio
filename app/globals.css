@@ -111,9 +111,14 @@ body::before {
   opacity: 0.4;
 }
 
-/* Section padding */
+/* Section padding — tighter on mobile, full 5rem on sm+ */
 .section-padding {
-  padding: 5rem 0;
+  padding: 3rem 0;
+}
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 5rem 0;
+  }
 }
 
 /* Glow effects */

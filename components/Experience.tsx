@@ -119,7 +119,7 @@ export default function Experience() {
                   <div className={`h-2 w-2 rounded-full ${expColorMap[exp.color].dot}`} />
                 </div>
 
-                <div className="glass rounded-2xl p-7 glass-hover group">
+                <div className="glass rounded-2xl p-5 sm:p-7 glass-hover group">
                   {/* Header */}
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                     <div>
@@ -137,7 +137,7 @@ export default function Experience() {
                         <Calendar className="h-3.5 w-3.5" />
                         {exp.period}
                       </div>
-                      <div className="flex items-center gap-1.5 text-sm text-text-muted justify-end">
+                      <div className="hidden sm:flex items-center gap-1.5 text-sm text-text-muted justify-end">
                         <MapPin className="h-3.5 w-3.5" />
                         {exp.location}
                       </div>
