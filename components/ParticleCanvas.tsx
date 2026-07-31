@@ -27,7 +27,7 @@ export default function ParticleCanvas() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let particles: Particle[] = [];
+    const particles: Particle[] = [];
 
     const resize = () => {
       canvas.width = window.innerWidth;
