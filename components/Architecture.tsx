@@ -214,7 +214,7 @@ export default function Architecture() {
             ].map((p) => (
               <div key={p.label} className="text-center">
                 <p className="font-bold gradient-text text-sm mb-1">{p.label}</p>
-                <p className="text-xs text-text-muted">{p.desc}</p>
+                <p className="text-xs text-text-secondary">{p.desc}</p>
               </div>
             ))}
           </div>

@@ -140,7 +140,7 @@ export default function Contact() {
                   <method.icon className="h-5 w-5" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-text-muted mb-0.5">{method.label}</p>
+                  <p className="text-xs text-text-secondary mb-0.5">{method.label}</p>
                   {method.href ? (
                     <a
                       href={method.href}
@@ -153,7 +153,7 @@ export default function Contact() {
                       {method.value}
                     </p>
                   )}
-                  <p className="text-xs text-text-muted mt-0.5">{method.desc}</p>
+                  <p className="text-xs text-text-secondary mt-0.5">{method.desc}</p>
                 </div>
                 {method.copyable && <CopyButton text={method.value} />}
               </motion.div>
@@ -205,7 +205,7 @@ function ContactForm({ inView: _inView }: { inView: boolean }) {
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="text-xs text-text-muted font-medium">Your Name</label>
+          <label className="text-xs text-text-secondary font-medium">Your Name</label>
           <input
             type="text"
             required
@@ -216,7 +216,7 @@ function ContactForm({ inView: _inView }: { inView: boolean }) {
           />
         </div>
         <div className="space-y-1.5">
-          <label className="text-xs text-text-muted font-medium">Email Address</label>
+          <label className="text-xs text-text-secondary font-medium">Email Address</label>
           <input
             type="email"
             required
@@ -229,7 +229,7 @@ function ContactForm({ inView: _inView }: { inView: boolean }) {
       </div>
 
       <div className="space-y-1.5">
-        <label className="text-xs text-text-muted font-medium">Subject</label>
+        <label className="text-xs text-text-secondary font-medium">Subject</label>
         <input
           type="text"
           value={form.subject}
@@ -240,7 +240,7 @@ function ContactForm({ inView: _inView }: { inView: boolean }) {
       </div>
 
       <div className="space-y-1.5">
-        <label className="text-xs text-text-muted font-medium">Message</label>
+        <label className="text-xs text-text-secondary font-medium">Message</label>
         <textarea
           required
           rows={5}
@@ -284,7 +284,7 @@ function ContactForm({ inView: _inView }: { inView: boolean }) {
         )}
       </motion.button>
 
-      <p className="text-xs text-text-muted text-center">
+      <p className="text-xs text-text-secondary text-center">
         I typically respond within 24 hours. You can also reach me directly via email.
       </p>
     </form>

@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, Code2, Heart } from "lucide-react";
 const socials = [
   { icon: Github, href: "https://github.com/Manideep1412?tab=repositories", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/manideep-salla-150468279/", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:deepu1919.salla@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:devmanideep.s@gmail.com", label: "Email" },
 ];
 
 const footerLinks = [
@@ -28,7 +28,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="font-bold text-text-primary">Manideep Salla</p>
-              <p className="text-xs text-text-muted">Full Stack .NET Developer</p>
+              <p className="text-xs text-text-secondary">Full Stack .NET Developer</p>
             </div>
           </div>
 
@@ -38,7 +38,7 @@ export default function Footer() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-text-muted hover:text-accent-blue transition-colors"
+                className="text-sm text-text-secondary hover:text-accent-blue transition-colors"
               >
                 {link.label}
               </a>
@@ -54,7 +54,7 @@ export default function Footer() {
                 aria-label={label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text-muted hover:text-accent-blue hover:border-accent-blue/40 hover:bg-accent-blue/5 transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text-secondary hover:text-accent-blue hover:border-accent-blue/40 hover:bg-accent-blue/5 transition-all"
               >
                 <Icon className="h-4 w-4" />
               </a>
@@ -63,10 +63,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-border/50 text-center">
-          <p className="text-sm text-text-muted flex items-center justify-center gap-1.5">
+          <p className="text-sm text-text-secondary flex items-center justify-center gap-1.5">
             Built with <Heart className="h-3.5 w-3.5 text-accent-pink fill-current" /> using Next.js 15, TypeScript &amp; Tailwind CSS
           </p>
-          <p className="mt-1 text-xs text-text-muted">
+          <p className="mt-1 text-xs text-text-secondary">
             © {new Date().getFullYear()} Manideep Salla. All rights reserved.
           </p>
         </div>

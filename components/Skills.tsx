@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { Monitor, Server, Cloud, Database, Shield, TestTube, Brain } from "lucide-react";
 
 const skillGroups = [
@@ -144,7 +144,7 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
     <div ref={ref} className="space-y-1.5">
       <div className="flex justify-between items-center">
         <span className="text-sm text-text-secondary font-medium">{name}</span>
-        <span className="text-xs text-text-muted font-mono">{level}%</span>
+        <span className="text-xs text-text-secondary font-mono">{level}%</span>
       </div>
       <div className="h-1.5 w-full rounded-full bg-surface-2 overflow-hidden">
         <motion.div
@@ -152,9 +152,42 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : { width: 0 }}
           transition={{ duration: 1, delay, ease: "easeOut" }}
+          style={{ boxShadow: `0 0 8px 1px var(--${color === 'pink' ? 'accent-pink' : `accent-${color}`}, #4f8ef7)` }}
         />
       </div>
     </div>
+  );
+}
+
+function TiltCard({ children, className }: { children: ReactNode; className?: string }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [8, -8]), { stiffness: 300, damping: 30 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-8, 8]), { stiffness: 300, damping: 30 });
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    x.set((e.clientX - rect.left) / rect.width - 0.5);
+    y.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+
+  const onLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 1000 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 }
 
@@ -192,28 +225,30 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: gi * 0.1 }}
-                className="glass rounded-2xl p-6 glass-hover"
               >
-                {/* Card header */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className={`flex h-10 w-10 items-center justify-center rounded-xl border ${config.border} bg-gradient-to-br ${config.bg}`}>
-                    <group.icon className={`h-5 w-5 ${config.icon}`} />
+                <TiltCard className="glass-deep rounded-2xl p-6 holographic h-full transition-all duration-300">
+                  {/* Card header */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl border ${config.border} bg-gradient-to-br ${config.bg}`}
+                      style={{ boxShadow: `0 0 16px rgba(79,142,247,0.2)` }}>
+                      <group.icon className={`h-5 w-5 ${config.icon}`} />
+                    </div>
+                    <h3 className="font-bold text-text-primary">{group.category}</h3>
                   </div>
-                  <h3 className="font-bold text-text-primary">{group.category}</h3>
-                </div>
 
-                {/* Skill bars */}
-                <div className="space-y-4">
-                  {group.skills.map((skill, si) => (
-                    <SkillBar
-                      key={skill.name}
-                      name={skill.name}
-                      level={skill.level}
-                      color={group.color}
-                      delay={gi * 0.1 + si * 0.06}
-                    />
-                  ))}
-                </div>
+                  {/* Skill bars */}
+                  <div className="space-y-4">
+                    {group.skills.map((skill, si) => (
+                      <SkillBar
+                        key={skill.name}
+                        name={skill.name}
+                        level={skill.level}
+                        color={group.color}
+                        delay={gi * 0.1 + si * 0.06}
+                      />
+                    ))}
+                  </div>
+                </TiltCard>
               </motion.div>
             );
           })}

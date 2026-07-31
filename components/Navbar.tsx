@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import MagneticButton from "@/components/MagneticButton";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -54,12 +55,25 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-xl",
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg shadow-black/20"
+          ? "bg-[rgba(6,6,18,0.88)]"
           : "bg-transparent"
       )}
+      style={scrolled ? {
+        boxShadow: "0 8px 32px rgba(0,0,0,0.55), 0 0 80px rgba(79,142,247,0.06)",
+      } : undefined}
     >
+      {/* Neon gradient border — fades in on scroll, replaces plain border-b */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[1px] pointer-events-none transition-opacity duration-500"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(79,142,247,0.7) 20%, rgba(168,85,247,0.6) 50%, rgba(34,211,238,0.45) 80%, transparent 100%)",
+          opacity: scrolled ? 1 : 0,
+        }}
+      />
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -104,13 +118,11 @@ export default function Navbar() {
               </button>
             ))}
 
-            <a
-              href="/resume.pdf"
-              download
-              className="ml-3 btn-primary text-sm py-2 px-4"
-            >
-              Resume
-            </a>
+            <MagneticButton className="ml-3">
+              <a href="/resume.pdf" download className="btn-primary text-sm py-2 px-4">
+                Resume
+              </a>
+            </MagneticButton>
           </nav>
 
           {/* Mobile toggle */}

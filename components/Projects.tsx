@@ -117,7 +117,7 @@ export default function Projects() {
           </p>
 
           {/* Confidential notice */}
-          <div className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full bg-surface-2 border border-border text-xs text-text-muted">
+          <div className="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full bg-surface-2 border border-border/80 text-xs text-text-secondary">
             <Lock className="h-3 w-3" />
             Client work — systems are confidential and not publicly accessible
           </div>
@@ -145,7 +145,7 @@ export default function Projects() {
                         <span className={`text-xs font-medium px-2.5 py-1 rounded-full border ${project.accentClass}`}>
                           {project.domain}
                         </span>
-                        <span className="text-xs font-medium px-2.5 py-1 rounded-full border border-border bg-surface-2 text-text-muted flex items-center gap-1">
+                        <span className="text-xs font-medium px-2.5 py-1 rounded-full border border-border/80 bg-surface-2 text-text-secondary flex items-center gap-1">
                           <Lock className="h-2.5 w-2.5" /> Confidential
                         </span>
                       </div>
@@ -164,15 +164,15 @@ export default function Projects() {
                       <div className="space-y-0.5 mb-5 pl-0 sm:pl-12">
                         <p className="text-sm font-medium text-text-secondary">{project.client}</p>
                         {project.via !== "Direct" && (
-                          <p className="text-xs text-text-muted">via {project.via}</p>
+                          <p className="text-xs text-text-secondary">via {project.via}</p>
                         )}
-                        <p className="text-xs text-text-muted font-mono">{project.period}</p>
+                        <p className="text-xs text-text-secondary font-mono">{project.period}</p>
                       </div>
 
                       {/* Scale stats */}
                       <div className="flex flex-col gap-2">
                         {project.scale.map((stat) => (
-                          <div key={stat} className="flex items-center gap-2 text-xs text-text-muted">
+                          <div key={stat} className="flex items-center gap-2 text-xs text-text-secondary">
                             <div className={`h-1.5 w-1.5 rounded-full flex-shrink-0 ${project.dotClass}`} />
                             {stat}
                           </div>
@@ -208,7 +208,7 @@ export default function Projects() {
                         {project.tech.map((t) => (
                           <span
                             key={t}
-                            className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface-2 border border-border text-text-muted"
+                            className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface/60 border border-border-glow/50 text-text-secondary"
                           >
                             {t}
                           </span>
@@ -230,7 +230,7 @@ export default function Projects() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-10 text-center"
         >
-          <p className="text-text-muted text-sm mb-4">
+          <p className="text-text-secondary text-sm mb-4">
             Want the full career timeline with detailed achievements?
           </p>
           <button

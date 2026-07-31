@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { ExternalLink, Github, BookOpen, Play } from "lucide-react";
 
 interface DemoApp {
@@ -103,6 +103,44 @@ const demoApps: DemoApp[] = [
   },
 ];
 
+function TiltCard3D({ children, glowColor, className }: { children: ReactNode; glowColor: string; className?: string }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [7, -7]), { stiffness: 350, damping: 35 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-7, 7]), { stiffness: 350, damping: 35 });
+
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    x.set((e.clientX - rect.left) / rect.width - 0.5);
+    y.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+
+  const onLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+        perspective: 1000,
+      }}
+      whileHover={{ boxShadow: `0 25px 70px ${glowColor}, 0 0 40px ${glowColor}` }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function DemoApps() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -135,11 +173,14 @@ export default function DemoApps() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="group glass rounded-2xl overflow-hidden glass-hover border border-border hover:border-border-glow transition-all duration-300 flex flex-col"
-              whileHover={{ boxShadow: `0 20px 60px ${app.glowColor}` }}
             >
-              {/* Gradient header banner */}
-              <div className={`h-2 bg-gradient-to-r ${app.gradient} flex-shrink-0`} />
+              <TiltCard3D
+                glowColor={app.glowColor}
+                className="group glass-deep rounded-2xl overflow-hidden border border-border hover:border-border-glow transition-all duration-300 flex flex-col holographic h-full"
+              >
+              {/* Gradient header banner — thicker + glowing */}
+              <div className={`h-1 bg-gradient-to-r ${app.gradient} flex-shrink-0`}
+                style={{ boxShadow: `0 0 20px ${app.glowColor}, 0 2px 12px ${app.glowColor}` }} />
 
               <div className="p-5 sm:p-7 flex flex-col flex-1">
                 {/* Badges */}
@@ -158,7 +199,7 @@ export default function DemoApps() {
                 <h3 className="text-lg font-bold text-text-primary group-hover:text-white transition-colors mb-0.5">
                   {app.title}
                 </h3>
-                <p className="text-xs font-mono text-text-muted mb-4">{app.subtitle}</p>
+                <p className="text-xs font-mono text-text-secondary mb-4">{app.subtitle}</p>
 
                 {/* Description */}
                 <p className="text-sm text-text-secondary leading-relaxed mb-5">
@@ -168,7 +209,7 @@ export default function DemoApps() {
                 {/* Feature list */}
                 <ul className="space-y-1.5 mb-6 flex-1">
                   {app.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-text-muted">
+                    <li key={feature} className="flex items-center gap-2 text-sm text-text-secondary">
                       <div className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${app.gradient} flex-shrink-0`} />
                       {feature}
                     </li>
@@ -208,6 +249,7 @@ export default function DemoApps() {
                   )}
                 </div>
               </div>
+              </TiltCard3D>
             </motion.div>
           ))}
         </div>
@@ -222,7 +264,7 @@ export default function DemoApps() {
           <p className="text-text-secondary mb-2">
             All projects are open source with full documentation.
           </p>
-          <p className="text-text-muted text-sm mb-5">
+          <p className="text-text-secondary text-sm mb-5">
             Browse the repositories for architecture decisions, code patterns, and deployment config.
           </p>
           <a

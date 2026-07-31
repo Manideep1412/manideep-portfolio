@@ -199,13 +199,13 @@ export default function BackendEngineering() {
                   <div className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
                   <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
                   <div className="h-2.5 w-2.5 rounded-full bg-green-500/60" />
-                  <span className="ml-2 text-xs text-text-muted font-mono">snippet.cs</span>
+                  <span className="ml-2 text-xs text-text-secondary font-mono">snippet.cs</span>
                 </div>
-                <pre className="text-xs font-mono text-text-muted overflow-x-auto leading-relaxed whitespace-pre-wrap">
+                <pre className="text-xs font-mono text-text-secondary overflow-x-auto leading-relaxed whitespace-pre-wrap">
                   <code
                     dangerouslySetInnerHTML={{
                       __html: feat.code
-                        .replace(/\/\/.*/g, '<span style="color:#475569">$&</span>')
+                        .replace(/\/\/.*/g, '<span style="color:#7c8da6">$&</span>')
                         .replace(/(await|var|new|async|public|private|return|string|int|bool|void|class|using|options|services|builder|policy)\b/g, '<span style="color:#a855f7">$1</span>')
                         .replace(/(&lt;|&gt;|"[^"]*")/g, '<span style="color:#22d3ee">$&</span>'),
                     }}

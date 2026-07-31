@@ -102,8 +102,9 @@ export default function Experience() {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px timeline-line hidden sm:block" />
+          {/* Timeline line — glowing gradient */}
+          <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px timeline-line hidden sm:block"
+            style={{ boxShadow: "0 0 8px 1px rgba(79,142,247,0.4)", filter: "blur(0.5px)" }} />
 
           <div className="space-y-8">
             {experiences.map((exp, i) => (
@@ -114,12 +115,25 @@ export default function Experience() {
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 className="relative sm:pl-20"
               >
-                {/* Timeline dot */}
-                <div className={`absolute left-4 sm:left-5 top-6 h-5 w-5 rounded-full border-2 ${expColorMap[exp.color].border} bg-background hidden sm:flex items-center justify-center`}>
-                  <div className={`h-2 w-2 rounded-full ${expColorMap[exp.color].dot}`} />
+                {/* Glowing pulsing timeline dot */}
+                <div className={`absolute left-4 sm:left-5 top-6 h-5 w-5 rounded-full border-2 ${expColorMap[exp.color].border} bg-background hidden sm:flex items-center justify-center`}
+                  style={{ boxShadow: `0 0 12px 3px currentColor` }}>
+                  <motion.div
+                    className={`h-2.5 w-2.5 rounded-full ${expColorMap[exp.color].dot}`}
+                    animate={{ scale: [1, 1.5, 1], opacity: [1, 0.6, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                    style={{ boxShadow: `0 0 8px 3px currentColor` }}
+                  />
+                  {/* Outer ping ring */}
+                  <motion.div
+                    className={`absolute inset-0 rounded-full ${expColorMap[exp.color].border}`}
+                    animate={{ scale: [1, 1.8], opacity: [0.6, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: i * 0.5 }}
+                    style={{ border: "1px solid" }}
+                  />
                 </div>
 
-                <div className="glass rounded-2xl p-5 sm:p-7 glass-hover group">
+                <div className="glass-deep rounded-2xl p-5 sm:p-7 holographic group transition-all duration-300">
                   {/* Header */}
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
                     <div>
@@ -133,11 +147,11 @@ export default function Experience() {
                       <p className="text-text-secondary font-medium mt-0.5">{exp.company}</p>
                     </div>
                     <div className="text-right space-y-1">
-                      <div className="flex items-center gap-1.5 text-sm text-text-muted justify-end">
+                      <div className="flex items-center gap-1.5 text-sm text-text-secondary justify-end">
                         <Calendar className="h-3.5 w-3.5" />
                         {exp.period}
                       </div>
-                      <div className="hidden sm:flex items-center gap-1.5 text-sm text-text-muted justify-end">
+                      <div className="hidden sm:flex items-center gap-1.5 text-sm text-text-secondary justify-end">
                         <MapPin className="h-3.5 w-3.5" />
                         {exp.location}
                       </div>
@@ -165,7 +179,7 @@ export default function Experience() {
                     {exp.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface-2 border border-border text-text-muted"
+                        className="text-xs font-mono px-2.5 py-1 rounded-full bg-surface/60 border border-border-glow/50 text-text-secondary"
                       >
                         {t}
                       </span>
@@ -184,7 +198,7 @@ export default function Experience() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12 text-center"
         >
-          <p className="text-text-muted mb-4 text-sm">Want the full details?</p>
+          <p className="text-text-secondary mb-4 text-sm">Want the full details?</p>
           <a href="/resume.pdf" download className="btn-primary inline-flex">
             Download Full Resume
           </a>

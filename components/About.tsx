@@ -99,10 +99,10 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-bold text-text-primary">Manideep Salla</h3>
                 <p className="text-accent-blue text-sm font-medium mt-0.5">Full Stack .NET & AI Developer</p>
-                <p className="text-text-muted text-xs mt-1">📍 Abbotsford, BC, Canada · 10+ Years Experience</p>
+                <p className="text-text-secondary text-xs mt-1">📍 Abbotsford, BC, Canada · 10+ Years Experience</p>
                 <div className="flex gap-2 mt-3">
                   <span className="text-xs px-2.5 py-1 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue font-medium">Open to Work</span>
-                  <span className="text-xs px-2.5 py-1 rounded-full bg-surface-2 border border-border text-text-muted">Remote Ready</span>
+                  <span className="text-xs px-2.5 py-1 rounded-full bg-surface-2 border border-border text-text-secondary">Remote Ready</span>
                 </div>
               </div>
             </div>
@@ -147,7 +147,7 @@ export default function About() {
                   { label: "Work Style", value: "Remote / Hybrid" },
                 ].map((fact) => (
                   <div key={fact.label} className="flex items-center justify-between text-sm border-b border-border/50 pb-3 last:border-0 last:pb-0">
-                    <span className="text-text-muted">{fact.label}</span>
+                    <span className="text-text-secondary">{fact.label}</span>
                     <span className="text-text-primary font-medium">{fact.value}</span>
                   </div>
                 ))}
@@ -176,7 +176,7 @@ export default function About() {
                 <h4 className="text-sm font-semibold text-text-primary mb-1.5">
                   {item.title}
                 </h4>
-                <p className="text-xs text-text-muted leading-relaxed">{item.desc}</p>
+                <p className="text-xs text-text-secondary leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
