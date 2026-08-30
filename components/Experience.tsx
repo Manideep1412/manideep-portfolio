@@ -199,7 +199,7 @@ export default function Experience() {
           className="mt-12 text-center"
         >
           <p className="text-text-secondary mb-4 text-sm">Want the full details?</p>
-          <a href="/resume.pdf" download="Manideep_Resume.pdf" className="btn-primary inline-flex">
+          <a href="/Manideep_Resume.pdf" download="Manideep_Resume.pdf" className="btn-primary inline-flex">
             Download Full Resume
           </a>
         </motion.div>

@@ -119,7 +119,7 @@ export default function Hero() {
                 </a>
               </MagneticButton>
               <MagneticButton className="w-full sm:w-auto">
-                <a href="/resume.pdf" download="Manideep_Resume.pdf" className="btn-secondary w-full justify-center">
+                <a href="/Manideep_Resume.pdf" download="Manideep_Resume.pdf" className="btn-secondary w-full justify-center">
                   <Download className="h-4 w-4" />
                   Download Resume
                 </a>
