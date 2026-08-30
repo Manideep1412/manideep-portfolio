@@ -14,7 +14,7 @@ const MUTED  = "#94a3b8";
 
 const TAGS = [".NET 10", "Angular 20", "C#", "Azure", "TypeScript", "OpenAI / RAG", "Microservices"];
 const STATS = [
-  { value: "10+", label: "Years" },
+  { value: "11+", label: "Years" },
   { value: "20+", label: "Projects" },
   { value: "3",   label: "Industries" },
 ];

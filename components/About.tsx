@@ -67,7 +67,7 @@ export default function About() {
             The Developer Behind the Code
           </h2>
           <p className="mt-4 text-text-secondary max-w-2xl mx-auto text-lg">
-            Full Stack .NET developer with 10+ years of enterprise experience — now building
+            Full Stack .NET developer with 11+ years of enterprise experience — now building
             AI-integrated products with OpenAI, RAG pipelines, and voice AI on top of the
             same battle-tested .NET and Angular foundations.
           </p>
@@ -99,7 +99,7 @@ export default function About() {
               <div>
                 <h3 className="text-xl font-bold text-text-primary">Manideep Salla</h3>
                 <p className="text-accent-blue text-sm font-medium mt-0.5">Full Stack .NET & AI Developer</p>
-                <p className="text-text-secondary text-xs mt-1">📍 Abbotsford, BC, Canada · 10+ Years Experience</p>
+                <p className="text-text-secondary text-xs mt-1">📍 Abbotsford, BC, Canada · 11+ Years Experience</p>
                 <div className="flex gap-2 mt-3">
                   <span className="text-xs px-2.5 py-1 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue font-medium">Open to Work</span>
                   <span className="text-xs px-2.5 py-1 rounded-full bg-surface-2 border border-border text-text-secondary">Remote Ready</span>
@@ -141,7 +141,7 @@ export default function About() {
               <div className="space-y-3">
                 {[
                   { label: "Location", value: "Abbotsford, BC, Canada" },
-                  { label: "Experience", value: "10+ Years" },
+                  { label: "Experience", value: "11+ Years" },
                   { label: "Focus", value: ".NET / Angular / React / AI" },
                   { label: "Availability", value: "Open to Opportunities" },
                   { label: "Work Style", value: "Remote / Hybrid" },

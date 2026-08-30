@@ -211,7 +211,7 @@ export default function Skills() {
             My Technology Stack
           </h2>
           <p className="mt-4 text-text-secondary max-w-xl mx-auto">
-            10+ years of hands-on experience across the full stack — from Angular UIs to .NET APIs
+            11+ years of hands-on experience across the full stack — from Angular UIs to .NET APIs
             to Azure infrastructure.
           </p>
         </motion.div>

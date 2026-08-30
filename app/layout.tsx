@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Manideep Salla | Full Stack .NET Developer",
   description:
-    "Full Stack .NET / Angular / React Developer with 10+ years building secure, scalable enterprise applications. Based in Canada. Expert in C#, ASP.NET Core, Angular, React, Azure, microservices, and OAuth2/OIDC.",
+    "Full Stack .NET / Angular / React Developer with 11+ years building secure, scalable enterprise applications. Based in Canada. Expert in C#, ASP.NET Core, Angular, React, Azure, microservices, and OAuth2/OIDC.",
   keywords: [
     "Full Stack Developer",
     ".NET Developer",

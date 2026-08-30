@@ -24,7 +24,7 @@ interface EnterpriseProject {
 
 const projects: EnterpriseProject[] = [
   {
-    product: "ARLO — User Account Management",
+    product: "ARLO — Alberta Registry for Land Online",
     client: "Government of Alberta",
     via: "Vantix Systems",
     domain: "Government · IAM",
@@ -35,7 +35,7 @@ const projects: EnterpriseProject[] = [
     dotClass: "bg-accent-blue",
     icon: Building2,
     summary:
-      "Enterprise Identity & Access Management platform for Alberta's regulatory and licensing operations — handling secure user onboarding, multi-agency role hierarchies, and full account lifecycle management for government internal and external users.",
+      "Government of Alberta land registry modernization platform delivering secure digital access to land title and registry services. As part of the UAM team, built secure onboarding workflows, RBAC/PBAC authorization, invitation management, and ARLO Pro onboarding using Angular and .NET microservices on OpenShift.",
     scale: ["Thousands of gov. users", "Multi-agency RBAC", "OpenShift production"],
     highlights: [
       "Led .NET 8 → .NET 10 upgrade, resolving breaking changes across Dapper, EF Core, and Keycloak/OIDC middleware on OpenShift",

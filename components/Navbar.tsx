@@ -119,7 +119,7 @@ export default function Navbar() {
             ))}
 
             <MagneticButton className="ml-3">
-              <a href="/resume.pdf" download className="btn-primary text-sm py-2 px-4">
+              <a href="/resume.pdf" download="Manideep_Resume.pdf" className="btn-primary text-sm py-2 px-4">
                 Resume
               </a>
             </MagneticButton>

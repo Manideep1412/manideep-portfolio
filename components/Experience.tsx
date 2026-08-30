@@ -97,7 +97,7 @@ export default function Experience() {
             Professional Journey
           </h2>
           <p className="mt-4 text-text-secondary max-w-xl mx-auto">
-            10+ years building production enterprise software across multiple industries and domains.
+            11+ years building production enterprise software across multiple industries and domains.
           </p>
         </motion.div>
 
@@ -199,7 +199,7 @@ export default function Experience() {
           className="mt-12 text-center"
         >
           <p className="text-text-secondary mb-4 text-sm">Want the full details?</p>
-          <a href="/resume.pdf" download className="btn-primary inline-flex">
+          <a href="/resume.pdf" download="Manideep_Resume.pdf" className="btn-primary inline-flex">
             Download Full Resume
           </a>
         </motion.div>

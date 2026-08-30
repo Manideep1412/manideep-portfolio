@@ -99,7 +99,7 @@ export default function Hero() {
               variants={item}
               className="mt-6 text-lg text-text-secondary max-w-xl leading-relaxed"
             >
-              10+ years shipping production-grade software across Angular, React, ASP.NET Core,
+              11+ years shipping production-grade software across Angular, React, ASP.NET Core,
               microservices, and Azure — now integrating{" "}
               <span className="text-emerald-400 font-medium">OpenAI, RAG pipelines, and voice AI</span>{" "}
               into real-world products. Based in{" "}
@@ -119,7 +119,7 @@ export default function Hero() {
                 </a>
               </MagneticButton>
               <MagneticButton className="w-full sm:w-auto">
-                <a href="/resume.pdf" download className="btn-secondary w-full justify-center">
+                <a href="/resume.pdf" download="Manideep_Resume.pdf" className="btn-secondary w-full justify-center">
                   <Download className="h-4 w-4" />
                   Download Resume
                 </a>
@@ -142,7 +142,7 @@ export default function Hero() {
               className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6"
             >
               {[
-                { value: "10+", label: "Years Experience" },
+                { value: "11+", label: "Years Experience" },
                 { value: "20+", label: "Projects Delivered" },
                 { value: "5+", label: "Cloud Platforms" },
                 { value: "100%", label: "Remote Ready" },
@@ -248,7 +248,7 @@ export default function Hero() {
                     style={{ zIndex: 6 }}
                   >
                     <p className="text-xs text-text-secondary leading-none mb-0.5">Experience</p>
-                    <p className="text-base font-extrabold gradient-text leading-none">10+ Yrs</p>
+                    <p className="text-base font-extrabold gradient-text leading-none">11+ Yrs</p>
                   </motion.div>
                 </div>
               </div>
