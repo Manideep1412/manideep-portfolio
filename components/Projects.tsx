@@ -72,7 +72,7 @@ const projects: EnterpriseProject[] = [
     client: "Synmek",
     via: "Direct",
     domain: "SaaS · Process Automation",
-    period: "Mar 2020 – Nov 2021",
+    period: "Aug 2020 – Nov 2021",
     accentClass: "bg-accent-cyan/10 border-accent-cyan/25 text-accent-cyan",
     accentText: "text-accent-cyan",
     borderClass: "border-l-accent-cyan",

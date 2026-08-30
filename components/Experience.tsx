@@ -62,7 +62,7 @@ const experiences = [
   {
     company: "Synmek",
     role: "Full Stack Developer",
-    period: "Mar 2020 – Nov 2021",
+    period: "Aug 2020 – Nov 2021",
     location: "Toronto, ON (Remote)",
     type: "Full-time",
     color: "accent-cyan",

@@ -163,7 +163,7 @@ export default function Navbar() {
               ))}
               <a
                 href="/resume.pdf"
-                download
+                download="Manideep_Resume.pdf"
                 className="mt-2 btn-primary justify-center text-sm"
               >
                 Download Resume
