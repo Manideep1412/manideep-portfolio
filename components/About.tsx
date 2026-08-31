@@ -11,6 +11,7 @@ import {
   Zap,
   Users,
   Brain,
+  GraduationCap,
 } from "lucide-react";
 
 const highlights = [
@@ -130,6 +131,23 @@ export default function About() {
                   vector search, and voice AI (Deepgram) with full-stack .NET and Next.js architectures.
                   I&apos;m passionate about bringing AI capabilities into practical, production-ready applications.
                 </p>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="glass rounded-2xl p-6 glass-hover">
+              <h3 className="text-sm font-mono text-accent-blue uppercase tracking-widest mb-4">
+                Education
+              </h3>
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-purple/10 border border-accent-purple/25 flex-shrink-0">
+                  <GraduationCap className="h-5 w-5 text-accent-purple" />
+                </div>
+                <div>
+                  <p className="text-text-primary font-semibold text-sm leading-snug">Master of Science, Energy Management</p>
+                  <p className="text-text-secondary text-xs mt-0.5">New York Institute of Technology — Vancouver</p>
+                  <p className="text-text-secondary text-xs font-mono mt-1">Jan 2019 – Jul 2020</p>
+                </div>
               </div>
             </div>
 
